@@ -193,6 +193,30 @@ ul
   content: ""
   display: table
   clear: both
+  
+.go-top
+	position: fixed
+	z-index: 1
+	right: 10px
+	bottom: -60px
+	width: 50px
+	height: 50px
+	background: #FFF
+	border-radius: 50%
+	display: flex
+	align-items: center
+	justify-content: center
+	cursor: pointer
+	opacity: 0
+	transition: .7s ease
+	box-shadow: 0px 0px 15px #ccb27f
+	svg
+		width: 70%
+		path
+			fill: #ccb27f
+	&.visible
+		bottom: 10px
+		opacity: 1
 
 .wrapper
   position: relative
@@ -468,6 +492,7 @@ button
     right: -20px
     fill: #fff
 
+
 .tabs-ip-list-item__inn
   position: relative
   -webkit-box-shadow: 0 17px 38px rgba(0, 0, 0, 0.2)
@@ -485,8 +510,8 @@ button
     width: calc(100% - 40px)
     margin-left: 20px
     background: #fff
-    -webkit-box-shadow: 0 -5px 6px rgba(0, 0, 0, 0.02)
-    box-shadow: 0 -5px 6px rgba(0, 0, 0, 0.02)
+    // -webkit-box-shadow: 0 -5px 6px rgba(0, 0, 0, 0.02)
+    // box-shadow: 0 -5px 6px rgba(0, 0, 0, 0.02)
     z-index: 2
   .block-radius__bot
     position: absolute
@@ -513,7 +538,7 @@ button
 .hod-slider-item__desc
   position: relative
   -webkit-box-shadow: 0 17px 38px rgba(0, 0, 0, 0.2)
-  box-shadow: 0 17px 38px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 17px 22px rgba(0, 0, 0, 0.2)
   .block-radius__content
     z-index: 2
     position: relative
@@ -598,6 +623,7 @@ button
   position: relative
   -webkit-box-shadow: 0 38px 60px rgba(0, 0, 0, 0.2)
   box-shadow: 0 38px 60px rgba(0, 0, 0, 0.2)
+  margin-right: -30px
   .block-radius__content
     z-index: 2
     position: relative
@@ -5015,6 +5041,7 @@ li.fancybox-thumbs-loading
 
 .menu
   position: fixed
+  overflow-y: auto
   top: 97px
   background: #d3cec2
   -webkit-box-shadow: 0px 13px 30px 0px rgba(35, 31, 32, 0.2)
@@ -5034,6 +5061,8 @@ li.fancybox-thumbs-loading
   -webkit-flex-direction: column
   flex-direction: column
   z-index: 150
+  &::-webkit-scrollbar 
+    display: none
 
 @media screen and (max-width: 768px)
   .menu
@@ -5271,6 +5300,7 @@ li.fancybox-thumbs-loading
 
 .callback
   position: fixed
+  overflow-y: auto
   top: 97px
   right: 0
   padding-top: 105px
@@ -5285,6 +5315,8 @@ li.fancybox-thumbs-loading
   z-index: 100
   &.active
     display: block
+  &::-webkit-scrollbar 
+    display: none
 
 @media screen and (max-width: 480px)
   .callback
@@ -5795,6 +5827,8 @@ li.fancybox-thumbs-loading
   -webkit-align-items: center
   align-items: center
   margin-bottom: 40px
+  &:hover .secrets__img
+  	transform: translate(0, -10px)
 
 @media screen and (max-width: 768px)
   .secrets__item
@@ -5828,6 +5862,7 @@ li.fancybox-thumbs-loading
   align-items: center
   -webkit-border-radius: 50%
   border-radius: 50%
+  transition: .7s
   svg
     width: 60px
     fill: #434244
@@ -5846,7 +5881,7 @@ li.fancybox-thumbs-loading
   font-size: 20px
   u
     text-decoration: none
-    border-bottom: 1px dashed #000
+    border-bottom: 1px dashed #ccb27f
 
 @media screen and (max-width: 768px)
   .secrets__text
@@ -6098,6 +6133,7 @@ li.fancybox-thumbs-loading
   max-width: 610px
   height: 100%
   max-height: 620px
+  left: 0%
   -webkit-transition: all .3s
   -o-transition: all .3s
   transition: all .3s
@@ -6132,6 +6168,8 @@ li.fancybox-thumbs-loading
     left: -40%
     &:after
       display: block
+    .bws-arrow__img
+    	transform: rotate(180deg)
 
 @media screen and (max-width: 768px)
   .bws
@@ -6142,9 +6180,10 @@ li.fancybox-thumbs-loading
 
 .bws-top-arrow
   position: absolute
-  right: -40px
+  right: 10px
   top: 0
   z-index: 40
+  transform: rotate(0deg)
 
 .bws-top__title
   font-size: 46px
@@ -6513,6 +6552,10 @@ li.fancybox-thumbs-loading
   -webkit-box-sizing: border-box
   box-sizing: border-box
   margin-right: -30px
+  
+@media screen and (max-width: 768px)
+  .tabs-content__desc
+    margin-right: 0px 
 
 .tabs-content__title
   min-height: 50px
@@ -6584,7 +6627,7 @@ li.fancybox-thumbs-loading
     -ms-flex: auto
     -webkit-flex: auto
     flex: auto
-    height: auto
+    height: 100%
 
 @media screen and (max-width: 768px)
   .tabs-content__img
@@ -7244,7 +7287,7 @@ li.fancybox-thumbs-loading
   width: 50%
   position: relative
 
-@media screen and (max-width: 1024px)
+@media screen and (max-width: 1366px)
   .pre-footer-slider
     width: 100%
 
@@ -7462,6 +7505,7 @@ li.fancybox-thumbs-loading
 
 .hod-slider-item
   cursor: pointer
+  margin: 0 10px
 
 .hod-slider-item__inn
   max-width: 291px
@@ -7712,7 +7756,7 @@ li.fancybox-thumbs-loading
   top: 0
   left: 0
 
-.first-slider .slick-list, .fullscreen-slider__main .slick-list
+.first-slider .slick-list, .fullscreen-slider__main .slick-list, .hod-tooltip-left .slick-list
   padding: 0px
 
 @media screen and (max-width: 768px)
