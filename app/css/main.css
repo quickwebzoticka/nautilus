@@ -1865,6 +1865,16 @@ li.fancybox-thumbs-loading {
   overflow: visible; }
   .hamburger:hover {
     opacity: .7; }
+    .hamburger:hover .hamburger-inner {
+      background-color: #ea6e01;
+      -webkit-transition: 0.3s ease;
+      -o-transition: 0.3s ease;
+      transition: 0.3s ease; }
+      .hamburger:hover .hamburger-inner::before, .hamburger:hover .hamburger-inner::after {
+        background-color: #ea6e01;
+        -webkit-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        transition: 0.3s ease; }
   .hamburger.is-active:hover {
     opacity: .7; }
   .hamburger.is-active .hamburger-inner {
@@ -1877,6 +1887,11 @@ li.fancybox-thumbs-loading {
   height: 18px;
   display: inline-block;
   position: relative; }
+  .hamburger-box:hover .hamburger-inner::before, .hamburger-box:hover .hamburger-inner::after {
+    background-color: #ea6e01;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease; }
 
 .hamburger-inner {
   display: block;
@@ -4577,7 +4592,6 @@ li.fancybox-thumbs-loading {
 
 .menu {
   position: fixed;
-  overflow-y: auto;
   top: 97px;
   background: #d3cec2;
   -webkit-box-shadow: 0px 13px 30px 0px rgba(35, 31, 32, 0.2);
@@ -4599,6 +4613,9 @@ li.fancybox-thumbs-loading {
   z-index: 150; }
   .menu::-webkit-scrollbar {
     display: none; }
+
+.menu.active {
+  overflow-y: auto; }
 
 @media screen and (max-width: 768px) {
   .menu {
@@ -5944,7 +5961,7 @@ li.fancybox-thumbs-loading {
   background: #ede8da;
   border-bottom-color: #fff; }
   .tabs .container {
-    padding: 100px 0;
+    padding: 50px 0 100px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -7277,9 +7294,14 @@ li.fancybox-thumbs-loading {
   -webkit-align-items: center;
   align-items: center; }
   .map-nav__item span {
-    border-bottom: 1px dashed #ccb27f; }
+    border-bottom: 1px dashed #ccb27f;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease; }
   .map-nav__item:hover .map-nav__img svg {
     fill: #e75300; }
+  .map-nav__item:hover span {
+    color: #e75300; }
 
 .map-nav__img {
   width: 35px;

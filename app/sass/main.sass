@@ -1866,6 +1866,12 @@ li.fancybox-thumbs-loading
   overflow: visible
   &:hover
     opacity: .7
+    .hamburger-inner
+      background-color: #ea6e01
+      transition: 0.3s ease
+      &::before, &::after
+        background-color: #ea6e01
+        transition: 0.3s ease
   &.is-active
     &:hover
       opacity: .7
@@ -1873,12 +1879,18 @@ li.fancybox-thumbs-loading
       background-color: #414042
       &::before, &::after
         background-color: #414042
+        
+        
 
 .hamburger-box
   width: 30px
   height: 18px
   display: inline-block
   position: relative
+  &:hover .hamburger-inner
+    &::before, &::after
+      background-color: #ea6e01
+      transition: 0.3s ease
 
 .hamburger-inner
   display: block
@@ -5041,7 +5053,6 @@ li.fancybox-thumbs-loading
 
 .menu
   position: fixed
-  overflow-y: auto
   top: 97px
   background: #d3cec2
   -webkit-box-shadow: 0px 13px 30px 0px rgba(35, 31, 32, 0.2)
@@ -5063,6 +5074,9 @@ li.fancybox-thumbs-loading
   z-index: 150
   &::-webkit-scrollbar 
     display: none
+    
+.menu.active
+  overflow-y: auto
 
 @media screen and (max-width: 768px)
   .menu
@@ -6403,7 +6417,7 @@ li.fancybox-thumbs-loading
   background: #ede8da
   border-bottom-color: #fff
   .container
-    padding: 100px 0
+    padding: 50px 0 100px
     display: -webkit-box
     display: -ms-flexbox
     display: -webkit-flex
@@ -7736,8 +7750,11 @@ li.fancybox-thumbs-loading
   align-items: center
   span
     border-bottom: 1px dashed #ccb27f
+    transition: .3s ease
   &:hover .map-nav__img svg
     fill: #e75300
+  &:hover span
+    color: #e75300
 
 .map-nav__img
   width: 35px
